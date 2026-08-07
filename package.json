@@ -1,0 +1,20 @@
+{
+  "name": "automationexercise-screenplay",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:qa": "cross-env ENV=qa playwright test --headed",
+    "test:staging": "cross-env ENV=staging playwright test --headed",
+    "test:prod": "cross-env ENV=prod playwright test --headed"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2",
+    "cross-env": "^10.1.0"
+  }
+}
