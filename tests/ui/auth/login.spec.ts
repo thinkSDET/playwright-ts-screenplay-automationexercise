@@ -7,7 +7,7 @@ import { LoginLocators } from "../../../src/locators/LoginLocators";
 test.describe("Login Tests", () => {
 
     // TC2 - Login with correct credentials
-    test("TC2 - Login User with correct email and password", async ({ actor,loginInput,loginExpected }) => {
+    test("TC2 - Login User with correct email and password",{tag :["@smoke","@regression"]} ,async ({ actor,loginInput,loginExpected }) => {
         await actor.attemptsTo(Login.withCredentials(loginInput.validuser.email, loginInput.validuser.password))
         const loggedIn = await actor.asks(IsLoggedIn.check())
         expect(loggedIn).toBe(true)
@@ -17,7 +17,7 @@ test.describe("Login Tests", () => {
 
     
     // TC3 - Login with incorrect credentials
-    test("TC3 - Login User with incorrect email and password", async ({ actor,loginInput,loginExpected }) => {
+    test("TC3 - Login User with incorrect email and password", {tag:["@sanity"]} ,async ({ actor,loginInput,loginExpected }) => {
         await actor.attemptsTo(Login.withCredentials(loginInput.invalidUser.email, loginInput.invalidUser.password)); 
         const loggedIn = await actor.asks(IsLoggedIn.check()); 
         expect(loggedIn).toBe(false);
