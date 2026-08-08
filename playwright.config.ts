@@ -17,7 +17,7 @@ export default defineConfig({
   },
   projects: [
      {
-        name : "setup",
+        name : "setUp",
         testMatch : "**/*.setup.ts"
      },
 
@@ -27,15 +27,15 @@ export default defineConfig({
         ...devices["Desktop Chrome"],
         storageState :STORAGE_STATE
       },
-      dependencies :["setup"]
+      dependencies :["setUp"]
     },
-    //  {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] ,storageState :STORAGE_STATE}, dependencies :["setup"] 
-    // },
-    //  {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'],storageState :STORAGE_STATE }, dependencies :["setup"]
-    // },
+     {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] ,storageState :STORAGE_STATE}, dependencies :["setUp"] 
+    },
+     {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'],storageState :STORAGE_STATE }, dependencies :["setUp"]
+    },
   ],
 });

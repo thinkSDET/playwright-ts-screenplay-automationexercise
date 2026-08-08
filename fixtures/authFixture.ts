@@ -1,10 +1,11 @@
-import { test as base, Browser } from "@playwright/test";
-import path from "path";
+import { test as base, Browser } from "@playwright/test";  // 'base' is an alias to avoid naming conflict when we export our own 'test'
+import path from "path";   // Node.js built-in to build file paths that work on any machine
 import { Routes } from "../utils/routes";
 import { LoginLocators } from "../src/locators/LoginLocators";
 import loginInput from "../test-data/input/loginData.json";
 
 export const STORAGE_STATE = path.join(__dirname, "../.auth/session.json");
+console.log("STORAGE_STATE path:", STORAGE_STATE)
 
 type AuthFixtures = {
   authenticatedPage: void;
@@ -21,7 +22,6 @@ export const test = base.extend<AuthFixtures>({
       await page.locator(LoginLocators.loginButton).click();
       await page.waitForURL("**/");
       await context.storageState({ path: STORAGE_STATE });
-      console.log("STORAGE_STATE path:", STORAGE_STATE)
       await context.close();
       await use();
     },

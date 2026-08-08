@@ -1,3 +1,3 @@
-import {test as setup} from  '../fixtures/authFixture'
+import {test as setUp} from  '../fixtures/authFixture'
 
-setup("Save auth state",async ({authenticatedPage}) =>{})
+setUp("Save auth state",async ({authenticatedPage}) =>{})
