@@ -1,0 +1,8 @@
+{
+  "validUser": {
+    "successMessage": "Logged in as"
+  },
+  "invalidUser": {
+    "errorMessage": "Your email or password is incorrect!"
+  }
+}
