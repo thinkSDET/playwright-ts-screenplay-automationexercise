@@ -7,11 +7,14 @@
     "test:staging": "cross-env ENV=staging playwright test --headed",
     "test:prod": "cross-env ENV=prod playwright test --headed",
 
-    "test:chrome": "cross-env ENV=qa npx playwright test --project=chromium --headed" ,
+    "test:chrome": "cross-env ENV=qa npx playwright test --project=chromium --headed",
     "test:firefox": "cross-env ENV=qa npx playwright test --project=firefox --headed",
     "test:safari": "cross-env ENV=qa npx playwright test --project=webkit --headed",
-    "test:all-browsers": "cross-env ENV=qa npx playwright test --headed"
+    "test:all-browsers": "cross-env ENV=qa npx playwright test --headed",
 
+    "test:smoke": "cross-env ENV=qa npx playwright test --grep @smoke --headed",
+    "test:regression": "cross-env ENV=qa npx playwright test --grep @regression --headed",
+    "test:sanity": "cross-env ENV=qa npx playwright test --grep @sanity --headed"
   },
   "keywords": [],
   "author": "",
