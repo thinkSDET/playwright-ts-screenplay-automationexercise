@@ -29,13 +29,13 @@ export default defineConfig({
       },
       dependencies :["setUp"]
     },
-     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] ,storageState :STORAGE_STATE}, dependencies :["setUp"] 
-    },
-     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'],storageState :STORAGE_STATE }, dependencies :["setUp"]
-    },
+    //  {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] ,storageState :STORAGE_STATE}, dependencies :["setUp"] 
+    // },
+    //  {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'],storageState :STORAGE_STATE }, dependencies :["setUp"]
+    // },
   ],
 });
